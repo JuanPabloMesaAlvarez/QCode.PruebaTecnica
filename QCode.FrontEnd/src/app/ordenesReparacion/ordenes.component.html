@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn btn-primary" (click)="crearOrden()">Crear nueva orden</button>
+            <br>
+            <table class="table-striped table-hover grid" style="width: 80%">
+                <thead>
+                    <th></th>
+                    <th></th>
+                    <th>Orden</th>
+                    <th>Placa</th>
+                    <th>Fecha</th>
+                    <th>Valor</th>
+                </thead>
+                <tbody class="grid_content">
+                    <tr *ngFor="let orden of ordenes">
+                        <td>
+                            <i class="fas fa-pencil-alt" (click)="seleccionarOrden(orden.ReparacionOrdenId)"></i>
+                        </td>
+                        <td>
+                            <i class="fas fa-trash" style="color: red" (click)="eliminarOrden(orden.ReparacionOrdenId)"></i>
+                        </td>
+                        <td>
+                            {{orden.ReparacionOrdenId}}
+                        </td>
+                        <td>
+                            {{orden.Placa}}
+                        </td>
+                        <td>
+                            {{orden.Fecha}}
+                        </td>
+                        <td>
+                            {{orden.Valor}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <orden [ordenId]="ordenSeleccionada" (ordenCreada)="traerOrdenes()"></orden>
+        </div>
+    </div>
+</div>

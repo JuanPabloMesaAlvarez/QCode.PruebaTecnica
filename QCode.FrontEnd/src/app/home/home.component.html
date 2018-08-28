@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Panel de Control</a>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/home/vehiculos" routerLinkActive="active">Vehiculos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/home/ordenes" routerLinkActive="active">Ordenes</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+        <a class="nav-link" href="#" (click)="logOut()">Salir</a>
+    </span>
+  </div>
+</nav>
+<br>
+<router-outlet></router-outlet>

@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn btn-primary" (click)="crearVehiculo()">Crear nuevo vehiculo</button>
+            <br>
+            <table class="table-striped table-hover" style="width: 70%">
+                <thead>
+                    <th></th>
+                    <th>Placa</th>
+                    <th>Modelo</th>
+                    <th>Fecha Creacion</th>
+                    <th>Activo</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let vehiculo of vehiculos">
+                        <td>
+                            <i class="fas fa-pencil-alt" (click)="seleccionarVehiculo(vehiculo.Placa)"></i>
+                        </td>
+                        <td>
+                            {{vehiculo.Placa}}
+                        </td>
+                        <td>
+                            {{vehiculo.Modelo}}
+                        </td>
+                        <td>
+                            {{vehiculo.FechaInsercion}}
+                        </td>
+                        <td>
+                            {{vehiculo.Activo}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        <input type="file" class="form-control-file" id="btnUpload" (change)="fileChange($event)" />
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" *ngIf="fileList && fileList.length > 0" (click)="importarVehiculos()">Importar vehiculos</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <vehiculo [placa]="placaSeleccionada" (vehiculoCreado)="traerVehiculos()"></vehiculo>
+        </div>
+    </div>
+</div>

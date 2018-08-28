@@ -1,0 +1,40 @@
+<h3>Detalle de vehiculo</h3>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        Placa:
+        <div class="col-md-4">
+            <input type="text" class="form-control" [(ngModel)]="vehiculo.Placa">
+        </div>
+        Modelo:
+        <div class="col-md-4">
+            <input type="text" class="form-control" [(ngModel)]="vehiculo.Modelo">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        Fecha:
+        <div class="col-md-4">
+            <input type="datetime-local" class="form-control" [(ngModel)]="vehiculo.FechaInsercion" readonly>
+        </div>
+        Activo:
+        <div class="col-md-4">
+            <select name="estado" class="form-control" [(ngModel)]="vehiculo.Activo" disabled>
+                <option value="true">Si</option>
+                <option value="false" selected>No</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        Imagen:
+        <div class="col-md-4">
+            <input type="file" class="form-control-file" (change)="fileChange($event)" />
+            <img [src]='image' width="100" />
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <button class="btn btn-primary" (click)="guardarVehiculo()" [disabled]="!vehiculo.Placa || !vehiculo.Modelo">Guardar vehiculo</button>
+    </div>
+</div>
