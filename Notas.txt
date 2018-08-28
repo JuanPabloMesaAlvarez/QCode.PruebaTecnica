@@ -1,0 +1,13 @@
+Para la solucion de la prueba use .net framework 4.6.2
+
+el backend es una webapi con la logica de negocio implementada con entity framework usando code first.
+para la lectura del archivo de excel use unas librerias ExcelDataReader y ExcelDataReader.DataSet que adicione por NuGet
+
+
+el frontend esta realizado con angular 5.2
+y bootstrap como base de estilos
+
+
+Adicional quiero comentar que no use ningun tipo de seguridad en la webapi por motivos de tiempo
+pero lo que tenia en mente era usar owin para implementar OAuthAuthorizationServer para solicitar
+token y asegurar las peticiones
